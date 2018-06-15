@@ -1,4 +1,4 @@
-
+#! /usr/bin/env python3
 
 def printMenu():
     print('Options')
@@ -19,6 +19,7 @@ def replace_entry():
     list_entries()
     replace_item = int(input('Which item would you like to replace: '))
     new_item = input('What new item would you like to replace ' + todo_list[replace_item] + 'with: ')
+    new_item -= 1
     todo_list[replace_item] = new_item
     list_entries()
     return
@@ -26,9 +27,11 @@ def replace_entry():
 def update_entry():
     list_entries()
     update_item = int(input('Which item would you like to move: '))
+    update_item -= 1
     temp_item = todo_list.pop(update_item)
     list_entries()
     new_location = int(input('Where would you like to insert: ' + temp_item))
+    new_location -= 1
     todo_list.insert(new_location, temp_item)
     print('Updated todo list')
     list_entries()
@@ -37,13 +40,18 @@ def update_entry():
 def delete_entry():
     list_entries()
     remove_item = int(input('What number would you like to remove: '))
-    remove_item =- 1
+    remove_item -= 1
     todo_list.pop(remove_item)
     return
 
 def list_entries():
     print('Current todo list items: ')
-    print(todo_list)
+    index = 0
+    while index < len(todo_list):
+        human_number = index + 1
+        print('[' + str(human_number) + ']' + todo_list[index])
+        index += 1
+    print()
     return
 
 
@@ -52,8 +60,8 @@ print('Welcome to the lame TODO app!')
 menu_choice = None
 
 # testing entries for quick development
-# todo_list = ['Joshua', 'Alice', 'Bob', 'Randal']
-todo_list = []
+todo_list = ['Joshua', 'Alice', 'Bob', 'Randal']
+## todo_list = []
 
 while menu_choice != 'Q':
     printMenu()
