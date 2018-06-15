@@ -81,5 +81,5 @@ while menu_choice != 'Q':
         print('Exiting, goodbye!')
         exit(0)
     else:
-        unknown_entry_string = 'Sorry the entry provided is not know: ' + menu_choice
+        unknown_entry_string = 'Sorry the entry provided is not known: ' + menu_choice
         print(unknown_entry_string)
