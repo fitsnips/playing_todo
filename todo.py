@@ -60,8 +60,8 @@ print('Welcome to the lame TODO app!')
 menu_choice = None
 
 # testing entries for quick development
-todo_list = ['Joshua', 'Alice', 'Bob', 'Randal']
-## todo_list = []
+# todo_list = ['Joshua', 'Alice', 'Bob', 'Randal']
+todo_list = []
 
 while menu_choice != 'Q':
     printMenu()
